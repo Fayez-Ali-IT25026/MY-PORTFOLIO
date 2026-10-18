@@ -99,7 +99,7 @@ Bangladesh
 
 - **GitHub:** [Fayez-Ali-IT25026](https://github.com/Fayez-Ali-IT25026)
 - **Email:** [fayezali210906@gmail.com](mailto:fayezali210906@gmail.com)
-- **Portfolio:** [Visit my website](YOUR_LIVE_PORTFOLIO_URL)
+- **Portfolio:** [Visit my website](https://my-portfolio-1-livid-seven.vercel.app/)
 
 ---
 
