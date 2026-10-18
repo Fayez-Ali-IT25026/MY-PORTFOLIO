@@ -1,5 +1,7 @@
 import AboutSection from "@/components/AboutSection";
+import EducationSection from "@/components/EducationSection";
 import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +13,8 @@ export default function Home() {
  <HeroSection/>
  <AboutSection/>
  <SkillsSection/>
+ <ProjectsSection/>
+ <EducationSection/>
 
     </>
   );
