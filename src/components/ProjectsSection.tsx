@@ -38,7 +38,7 @@ const projects = [
     "A fitness tracking application built to practice React, TypeScript, API integration, and managing workout plans and saved items.",
   tech: ["React", "TypeScript", "Tailwind CSS", "API Integration"],
   github: "https://github.com/Fayez-Ali-IT25026/Assignment__6",
-  demo: "https://assignment-6-two-blue.vercel.app",
+  demo: "https://assignment-6-eta-kohl.vercel.app/",
   featured: false,
   symbol: "↗",
 },
