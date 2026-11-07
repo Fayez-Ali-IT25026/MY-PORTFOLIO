@@ -1,28 +1,43 @@
+
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+
+const subscribe = (callback: () => void) => {
+  const mediaQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  mediaQuery.addEventListener("change", callback);
+
+  return () => {
+    mediaQuery.removeEventListener("change", callback);
+  };
+};
+
+const getSnapshot = () =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const getServerSnapshot = () => false;
 
 const LoadingScreen = () => {
-     const [visible, setVisible] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  const reducedMotion = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot
+  );
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-
-    if (mediaQuery.matches) {
-      setReducedMotion(true);
-      setVisible(false);
-      return;
-    }
+    if (reducedMotion) return;
 
     const timeout = window.setTimeout(() => {
       setVisible(false);
     }, 900);
 
     return () => window.clearTimeout(timeout);
-  }, []);
+  }, [reducedMotion]);
 
   if (!visible || reducedMotion) return null;
 
